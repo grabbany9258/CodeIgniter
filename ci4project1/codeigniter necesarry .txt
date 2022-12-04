@@ -1,2 +1,2 @@
 For Creating a Project :
-	composer create-project codeigniter4/appstcdarter ci-news
+	> composer create-project codeigniter4/appstarter ci-news
