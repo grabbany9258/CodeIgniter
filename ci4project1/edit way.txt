@@ -1,0 +1,8 @@
+Users entry form:
+
+1) user create .php a create function banate hbe.
+2) Routes a  dite hbe
+$routes->get('users/add', 'UserCrud::create');
+3)views a user_create.php banate hbe
+4)
+
