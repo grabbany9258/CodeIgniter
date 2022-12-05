@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
     <title>Bootstrap 5 Website Example</title>
@@ -86,14 +86,16 @@
 
 
                     <tr>
-                        <th>ID</th>
+                        <th>SL</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
-                    <?php foreach ($MyUsers as $users) : ?>
+                    <?php
+                    $count = 1;
+                    foreach ($MyUsers as $users) : ?>
                         <tr>
-                            <td><?php echo $users['id'] ?></td>
+                            <td><?php echo $count ?></td>
                             <td><?php echo $users['name'] ?></td>
                             <td><?php echo $users['email'] ?></td>
                             <td>
@@ -102,7 +104,9 @@
                             </td>
 
                         </tr>
-                    <?php endforeach; ?>
+                    <?php
+                        $count++;
+                    endforeach; ?>
                 </table>
 
 

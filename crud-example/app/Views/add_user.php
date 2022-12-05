@@ -20,6 +20,7 @@
 
 <body>
     <div class="container mt-5">
+        <h1>Add User Form</h1>
         <form method="post" id="add_create" name="add_create" action="<?= site_url('/submit-form') ?>">
             <div class="form-group">
                 <label>Name</label>
@@ -30,7 +31,7 @@
                 <input type="text" name="email" class="form-control">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Update Data</button>
+                <button type="submit" class="btn btn-primary btn-block">Add User</button>
             </div>
         </form>
     </div>
