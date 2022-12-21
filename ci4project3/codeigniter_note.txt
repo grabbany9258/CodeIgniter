@@ -1,0 +1,16 @@
+1) Codeigniter app install comand:
+
+		composer create-project codeigniter4/appstarter ci4project3
+
+2) For Creating migration:
+	php spark make:migration Student
+3) For Creating table:
+	php spark migrate
+4) For droping tables data
+	php spark migrate:refresh
+5) For making model
+	php spark make: model Student
+6)For making controller
+	php spark make:controller
+7) Multiple function in controller
+	php spark make:controller student --restful

@@ -15,10 +15,10 @@ class UserCrud extends BaseController
         //print_r($data);
         return view('user_show', $data);
     }
-    public function delete()
+    public function delete($id)
     {
         $userObj = new UserModel();
-        // $data[] = $userObj->Where('id', $id)->find($id);
-        $data['users'] =  $userObj->find($id);
+        $userObj->Where('id', $id)->delete($id);
+        $this->response->redirect('/users');
     }
 }
