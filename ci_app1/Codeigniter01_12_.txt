@@ -1,9 +1,0 @@
-For start codigniter: php spark serve
-
-Controller banate command:
-	php spark make:controller myhome
-
-2)controller bnanaor por config folder a routes a dite hbe .
-3)Niche o controller ta dite hbe
-4)Aboutt o same vabe baniye about ta routs a bole dite hbe.
-5)About_us name a 

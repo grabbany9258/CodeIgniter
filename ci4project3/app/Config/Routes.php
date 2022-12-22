@@ -38,7 +38,12 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/about', 'Home::about');
 $routes->get('/contact', 'Home::contact');
+$routes->get('/products', 'Product::index');
 $routes->get('/students', 'Student::index');
+$routes->get('users', 'Usercrud::index');
+$routes->get('users/add', 'Usercrud::create');
+$routes->post('users/submit', 'Usercrud::store');
+
 
 /*
  * --------------------------------------------------------------------

@@ -28,6 +28,12 @@ class Home extends BaseController
         // echo view('includes/navbar');
         $data['title'] = "my home page";
         return view('contact_us', $data);
-        // echo view('includes/footer');
+        // echo view('includes/footer'); 
     }
+
+    // public function products()
+    // {
+    //     $data['title'] = "my home page";
+    //     return view('products/products_list', $data);
+    // }
 }

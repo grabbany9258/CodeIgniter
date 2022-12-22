@@ -11,6 +11,6 @@
 5) For making model
 	php spark make: model Student
 6)For making controller
-	php spark make:controller
+	php spark make:controller student
 7) Multiple function in controller
 	php spark make:controller student --restful

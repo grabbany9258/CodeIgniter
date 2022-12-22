@@ -1,4 +1,4 @@
-<?php $page = basename($_SERVER['PHP_SELF']); ?> // ata link active korar jonno
+<?php $page = basename($_SERVER['PHP_SELF']); ?>
 
 <div class="p-5 bg-primary text-white text-center">
     <h1>CodeIgniter Project 3</h1>
@@ -20,6 +20,12 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link <?= ($page == 'students') ? 'active' : ""; ?> " href="/students">Students List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <?= ($page == 'products') ? 'active' : ""; ?> " href="/products">Products List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <?= ($page == 'users') ? 'active' : ""; ?> " href="/users">Users Crud</a>
             </li>
         </ul>
     </div>
