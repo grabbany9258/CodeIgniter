@@ -24,13 +24,20 @@ class Usercrud extends BaseController
     }
     public function store()
     {
-        helper(['form']);
+        // helper(['form']);
         $newuser =  new CrudModel();
-        $data['u_name'] = $this->request->getVar('u_name');
-        $data['email'] = $this->request->getVar('email');
-        $data['phone'] = $this->request->getVar('phone');
+        // $data['u_name'] = $this->request->getVar('u_name');
+        // $data['email'] = $this->request->getVar('email');
+        // $data['phone'] = $this->request->getVar('phone');
+
+        // uporer purota avabeo kora jay
+        $data = $this->request->getPost();
         //print_r($data);
+
         $newuser->insert($data);
         $this->response->redirect('/users');
+    }
+    public function delete()
+    {
     }
 }

@@ -1,0 +1,4 @@
+1) Encryption.key:
+	php spark key:generate
+2) For Showing Routes
+	php spark routes

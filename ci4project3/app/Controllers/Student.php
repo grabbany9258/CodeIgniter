@@ -39,7 +39,8 @@ class Student extends ResourceController
      */
     public function new()
     {
-        //
+        $data['title'] = "New Student";
+        return view('students/add_student', $data);
     }
 
     /**
@@ -49,7 +50,21 @@ class Student extends ResourceController
      */
     public function create()
     {
-        //
+        $model = new StudentModel();
+        // $data['name'] = $this->request->getPost('name');
+        // $data['phone'] = $this->request->getPost('phone');
+        // $data['email'] = $this->request->getPost('email');
+        // $data['address'] = $this->request->getPost('address');
+
+        $data = $this->request->getPost();
+        //print_r($data);
+        if ($model->save($data)) {
+
+            //return redirect()->back();
+
+            // student akhn a student_list a direct hocce php spark routes ar maddhome
+            return redirect('Student');
+        }
     }
 
     /**
@@ -59,7 +74,9 @@ class Student extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $model = new StudentModel();
+        $data['student'] = $model->find($id);
+        return view("students/edit_student", $data);
     }
 
     /**
@@ -69,7 +86,11 @@ class Student extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $model = new StudentModel();
+        $data = $this->request->getPost();
+        if ($model->update($id, $data)) {
+            return redirect()->to("student");
+        }
     }
 
     /**
@@ -79,6 +100,8 @@ class Student extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $model = new StudentModel();
+        $model->delete($id);
+        return redirect()->to("student");
     }
 }
