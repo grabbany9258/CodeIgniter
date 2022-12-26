@@ -4,35 +4,42 @@
 
 <div class="container">
 
-    <?php
-    // foreach ($products as $product) {
-    //     echo $product['p_name'] . "<br>";
-    //     echo $product['price'] . "<br>";
-    //     echo $product['category'] . "<br>";
-    // } 
-    ?>
-    <h1 class="text-center">Products List</h1>
+
+    <h1 class="text-center mt-4 mb-4 bg-info">Products List</h1>
     <table class="table table-striped table-bordered text-center">
         <tr>
-            <th>Id</th>
+
+            <th>SL</th>
             <th>Name</th>
             <th>Price</th>
             <th>category</th>
             <th>Collection Place</th>
+            <th>Action</th>
         </tr>
 
-        <?php foreach ($products as $product) : ?>
+        <?php
+        $count = 1;
+
+        foreach ($products as $product) : ?>
+
             <tr>
-                <td><?php echo $product['id']  ?></td>
+
+                <td><?php echo $count  ?></td>
                 <td><?php echo $product['p_name']  ?></td>
                 <td><?php echo $product['price']  ?></td>
                 <td><?php echo $product['category']  ?></td>
                 <td><?php echo $product['coll_place']  ?></td>
+                <td>
+                    <a href="product/edit/<?= $product['id']; ?>" class="btn btn-primary">Edit</a>
+                    <a href="product/delete/<?= $product['id']; ?>" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
 
-        <?php endforeach ?>
+        <?php $count++;
+        endforeach ?>
 
     </table>
+    <a href="product/new" class="btn btn-primary">Add Products</a>
 </div>
 
 <?php echo view('includes/footer') ?>

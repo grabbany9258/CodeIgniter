@@ -40,12 +40,20 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/about', 'Home::about');
 $routes->get('/contact', 'Home::contact');
-$routes->get('/products', 'Product::index');
+// $routes->get('/products', 'Product::index');
+$routes->resource('Product');
 // $routes->get('/students', 'Student::index');
 $routes->resource('Student');
 $routes->get('users', 'Usercrud::index');
 $routes->get('users/add', 'Usercrud::create');
 $routes->post('users/submit', 'Usercrud::store');
+// delete posiible in both routes user_display teo change korte hbe
+$routes->get('users/delete/(:num)', 'Usercrud::delete/$1');
+// $routes->get('userCrud/delete', 'Usercrud::delete');
+
+$routes->get('users/edit/(:num)', 'Usercrud::edit/$1');
+// $routes->get('userCrud/edit', 'Usercrud::edit');
+$routes->post('users/update/(:num)', 'Usercrud::update/$1');
 
 
 /*

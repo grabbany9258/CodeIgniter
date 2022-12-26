@@ -22,7 +22,7 @@
                 <a class="nav-link <?= ($page == 'student') ? 'active' : ""; ?> " href="/student">Students List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= ($page == 'products') ? 'active' : ""; ?> " href="/products">Products List</a>
+                <a class="nav-link <?= ($page == 'product') ? 'active' : ""; ?> " href="/product">Products List</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?= ($page == 'users') ? 'active' : ""; ?> " href="/users">Users Crud</a>

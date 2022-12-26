@@ -88,6 +88,7 @@ class Student extends ResourceController
     {
         $model = new StudentModel();
         $data = $this->request->getPost();
+        //echo print_r($data);
         if ($model->update($id, $data)) {
             return redirect()->to("student");
         }

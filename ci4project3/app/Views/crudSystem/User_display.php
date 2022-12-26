@@ -8,25 +8,31 @@
     <table class="table table-success table-striped table-bordered text-center">
 
         <tr>
-            <th>ID</th>
+            <th>SL</th>
             <th>Users Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Action</th>
         </tr>
-        <?php foreach ($users as $user) : ?>
+        <?php
+        $count = 1;
+        foreach ($users as $user) : ?>
             <tr>
-                <td><?php echo $user['id'] ?></td>
+                <td><?php echo $count ?></td>
                 <td><?php echo $user['u_name'] ?></td>
                 <td><?php echo $user['email'] ?></td>
                 <td><?php echo $user['phone'] ?></td>
                 <td>
-                    <a href="" class="btn btn-primary">Edit</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="users/edit/<?= $user['id']; ?>" class="btn btn-primary">Edit</a>
+                    <!-- <a href="userCrud/edit/<?= $user['id']; ?>" class="btn btn-primary">Edit</a> -->
+                    <!-- <a href="userCrud/delete/<?= $user['id']; ?>" class="btn btn-danger">Delete</a> -->
+                    <a href="users/delete/<?= $user['id']; ?>" class="btn btn-danger">Delete</a>
                 </td>
 
             </tr>
-        <?php endforeach; ?>
+        <?php
+            $count++;
+        endforeach; ?>
 
 
 
