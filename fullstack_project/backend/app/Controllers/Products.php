@@ -38,7 +38,7 @@ class Products extends ResourceController
      */
     public function new()
     {
-        //
+        return view('products/add_products');
     }
 
     /**
@@ -48,7 +48,12 @@ class Products extends ResourceController
      */
     public function create()
     {
-        //
+        $model = new ProductModel();
+        $data =  $this->request->getPost();
+        //print_r($data);
+        if ($model->save($data)) {
+            return redirect('Products');
+        }
     }
 
     /**
@@ -58,7 +63,10 @@ class Products extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $model = new ProductModel();
+        $data['product'] = $model->find($id);
+        //print_r($data);
+        return view('products/edit_products', $data);
     }
 
     /**
@@ -68,7 +76,11 @@ class Products extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $model = new ProductModel();
+        $data = $this->request->getPost();
+        if ($model->update($id, $data)) {
+            return redirect('Products');
+        }
     }
 
     /**
@@ -80,6 +92,6 @@ class Products extends ResourceController
     {
         $model = new ProductModel();
         $model->delete($id);
-        return redirect('/products');
+        return redirect('Products');
     }
 }

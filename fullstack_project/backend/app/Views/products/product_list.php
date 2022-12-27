@@ -19,8 +19,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
+
+                        <li class="breadcrumb-item active"><a href="products/new">Add Products</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -42,41 +42,49 @@
                         <div class="card-header">
                             <h3 class="card-title">DataTable with default features</h3>
                         </div>
+                        <div>
+                            <a href="products/new" class="btn btn-primary float-right mr-4 mt-3">Add Product</a>
+                        </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
+                                        <th>SL</th>
                                         <th>Product Name</th>
                                         <th>Price</th>
                                         <th>Details</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <?php foreach ($products as $product) : ?>
+                                <?php
+                                $count = 1;
+                                foreach ($products as $product) : ?>
                                     <tbody>
                                         <tr>
-                                            <td><?= $product['id'] ?></td>
+                                            <td><?= $count ?></td>
                                             <td><?= $product['product_name'] ?></td>
                                             <td><?= $product['product_price'] ?></td>
                                             <td><?= $product['product_details'] ?></td>
                                             <td>
-                                                <a href="" class="btn btn-primary">Edit</a>
+                                                <a href="products/edit/<?php echo $product['id']; ?>" class="btn btn-primary">Edit</a>
                                                 <a href="products/delete/<?php echo $product['id']; ?>" class="btn btn-danger">Delete</a>
                                             </td>
 
                                         </tr>
 
-                                    <?php endforeach; ?>
+                                    <?php
+                                    $count++;
+                                endforeach; ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>SL</th>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Details </th>
+                                            <th><a href="products/new" class="btn btn-success ">Add Product</a> </th>
+
                                         </tr>
                                     </tfoot>
                             </table>
