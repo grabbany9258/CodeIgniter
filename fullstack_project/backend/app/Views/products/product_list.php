@@ -67,8 +67,8 @@
                                             <td><?= $product['product_price'] ?></td>
                                             <td><?= $product['product_details'] ?></td>
                                             <td>
-                                                <a href="products/edit/<?php echo $product['id']; ?>" class="btn btn-primary">Edit</a>
-                                                <a href="products/delete/<?php echo $product['id']; ?>" class="btn btn-danger">Delete</a>
+                                                <a href="products/edit/<?php echo $product['id']; ?>"><i class="fa fa-edit"></i></a> |
+                                                <a href="products/delete/<?php echo $product['id']; ?>"><i class="fa fa-trash"></i></a>
                                             </td>
 
                                         </tr>

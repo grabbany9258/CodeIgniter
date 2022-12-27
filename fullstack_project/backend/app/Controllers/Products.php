@@ -13,6 +13,13 @@ class Products extends ResourceController
      *
      * @return mixed
      */
+    // validationa ar value rakhar jonno ata lagbe
+    function __construct()
+    {
+        helper(['form', 'url']);
+    }
+
+
     public function index()
     {
         $model = new ProductModel();
@@ -48,11 +55,22 @@ class Products extends ResourceController
      */
     public function create()
     {
-        $model = new ProductModel();
-        $data =  $this->request->getPost();
-        //print_r($data);
-        if ($model->save($data)) {
-            return redirect('Products');
+        $validate = $this->validate([
+            'product_name' => 'required|min_length[5]|max_length[20]',
+            'product_details' => 'required|min_length[10]',
+            'product_price' => 'required|numeric',
+
+        ]);
+
+        if (!$validate) {
+            return view('products/add_products', ['validation' => $this->validator]);
+        } else {
+            $model = new ProductModel();
+            $data =  $this->request->getPost();
+            //print_r($data);
+            if ($model->save($data)) {
+                return redirect('Products');
+            }
         }
     }
 

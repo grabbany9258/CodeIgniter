@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="/assets/plugins/summernote/summernote-bs4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
