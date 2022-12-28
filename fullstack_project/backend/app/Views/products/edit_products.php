@@ -37,21 +37,52 @@
                         <div class="card-header">
                             <h3 class="card-title text-center">Add Product</h3>
                         </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <form method="post" action="/products/update/<?= $product['id']; ?>">
+
+
+                        <!-- For validation session taken -->
+
+                        <?php
+                        $errors = [];
+                        if (session()->has('errors')) {
+                            $errors = session()->errors;
+                        } ?>
+
+
+
+                        <!-- <form method="post" action="/products/update/<?= $product['id']; ?>"> -->
+                        <form method="post" action="<?= base_url('products/update/' . $product['id']); ?>">
                             <div class="card-body">
                                 <div class="form-group">
+
                                     <label for="exampleInputEmail1">Product Name </label>
-                                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?php echo $product['product_name'] ?>" />
+
+                                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?= old('product_name') ? old('product_name') : $product['product_name']  ?>" />
+
+                                    <?php if (isset($errors['product_name'])) : ?>
+
+                                        <div class="alert alert-warning mt-2"><?= $errors['product_name']; ?></div>
+
+                                    <?php endif; ?>
                                 </div>
+
+
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">details</label>
-                                    <input type="text" name="product_details" class="form-control" id="exampleInputPassword1" placeholder="Enter Product Details" value="<?php echo $product['product_details'] ?>" />
+                                    <label for="exampleInputPassword1">Product Details</label>
+
+                                    <textarea type="text" name="product_details" class="form-control" id="summernote" placeholder="Enter Product Details"><?= old('product_details') ? old('product_details') : $product['product_details']  ?></textarea>
+
+                                    <?php if (isset($errors['product_details'])) : ?>
+                                        <div class="alert alert-warning my-2"><?= $errors['product_details']; ?></div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product Price </label>
-                                    <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter Product price" value="<?php echo $product['product_price'] ?>" />
+
+                                    <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter Product price" value="<?= old('product_price') ? old('product_price') : $product['product_price']  ?>" />
+
+                                    <?php if (isset($errors['product_price'])) : ?>
+                                        <div class="alert alert-warning my-2"><?= $errors['product_price']; ?></div>
+                                    <?php endif; ?>
                                 </div>
 
 

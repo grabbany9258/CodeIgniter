@@ -13,11 +13,13 @@ class Products extends ResourceController
      *
      * @return mixed
      */
+
+
     // validationa ar value rakhar jonno ata lagbe
-    function __construct()
-    {
-        helper(['form', 'url']);
-    }
+    // function __construct()
+    // {
+    //     helper(['form', 'url']);
+    // }
 
 
     public function index()
@@ -55,21 +57,46 @@ class Products extends ResourceController
      */
     public function create()
     {
-        $validate = $this->validate([
+
+        $rules = [
             'product_name' => 'required|min_length[5]|max_length[20]',
             'product_details' => 'required|min_length[10]',
             'product_price' => 'required|numeric',
 
-        ]);
+        ];
 
-        if (!$validate) {
-            return view('products/add_products', ['validation' => $this->validator]);
+        $errors = [
+
+            'product_name' => [
+                'required' => 'Product name must be fill',
+                'min_length' => 'Minimum length 5',
+                'max_length' => 'Maximum lenght is 30',
+            ],
+            'product_details' => [
+                'required' => 'Product name must be fill',
+                'min_length' => 'Minimum length 5',
+
+            ],
+            'product_price' => [
+                'required' => 'Product name must be fill',
+                'numeric' => 'Number Only',
+
+            ],
+
+
+        ];
+
+        echo $validation = $this->validate($rules, $errors);
+
+        if (!$validation) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         } else {
             $model = new ProductModel();
             $data =  $this->request->getPost();
             //print_r($data);
             if ($model->save($data)) {
-                return redirect('Products');
+                //return redirect('Products');
+                return redirect()->to('Products');
             }
         }
     }
@@ -94,11 +121,32 @@ class Products extends ResourceController
      */
     public function update($id = null)
     {
-        $model = new ProductModel();
-        $data = $this->request->getPost();
-        if ($model->update($id, $data)) {
-            return redirect('Products');
+
+        $validate = $this->validate([
+            'product_name' => 'required|min_length[5]|max_length[20]',
+            'product_details' => 'required|min_length[10]',
+            'product_price' => 'required|numeric',
+
+        ]);
+
+        if (!$validate) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        } else {
+            $model = new ProductModel();
+            $data['product_name'] = $this->request->getPost('product_name');
+            $data['product_details'] = $this->request->getPost('product_details');
+            $data['product_price'] = $this->request->getPost('product_price');
+            $model->update($id, $data);
+            return redirect()->to('Products')->with('msg', "Updated Succesfully");
         }
+
+        // Avbebeo kora jay
+
+        // $model = new ProductModel();
+        // $data = $this->request->getPost();
+        // if ($model->update($id, $data)) {
+        //     return redirect('Products');
+        // }
     }
 
     /**

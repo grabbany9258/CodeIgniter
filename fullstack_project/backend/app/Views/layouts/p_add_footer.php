@@ -21,8 +21,8 @@
 <script src="/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/assets/dist/js/demo.js"></script>
+
+
 <!-- Page specific script -->
 <!-- Summernote -->
 <script src="/assets/plugins/summernote/summernote-bs4.min.js"></script>
