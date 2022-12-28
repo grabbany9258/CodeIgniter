@@ -42,33 +42,45 @@
                         <form method="post" action="/products/create">
                             <div class="card-body">
 
-                                <?php if (isset($validation)) {
-                                    $errors = $validation->getErrors();
-                                    if (count($errors) > 0) {
-                                        echo "<ul>";
-                                        foreach ($errors as $error) {
-                                            echo "<li>$error</li>";
-                                        }
-                                        echo "</ul>";
-                                    }
-                                } ?>
+                                <!-- for Showing errors in card body together -->
+
+                                <?php
+                                // if (isset($validation)) {
+                                //     $errors = $validation->getErrors();
+                                //     if (count($errors) > 0) {
+                                //         echo "<ul>";
+                                //         foreach ($errors as $error) {
+                                //             echo "<li>$error</li>";
+                                //         }
+                                //         echo "</ul>";
+                                //     }
+                                // } 
+                                ?>
 
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product Name </label>
-                                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?php echo set_value('product_name') ?>" />
-                                    <span class="text-danger"><?php if (isset($validation)) {
-                                                                    $error = $validation->getError('product_name');
-                                                                    echo $error;
-                                                                } ?></span>
+                                    <input type="text" name="product_name" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?php echo set_value('product_name') ?>" />
+                                    <span class="alert alert-warning"><?php if (isset($validation)) {
+                                                                            $error = $validation->getError('product_name');
+                                                                            echo $error;
+                                                                        } ?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Product Details</label>
-                                    <textarea type="text" name="product_details" class="form-control" id="summernote" placeholder="Enter Product Details"><?php echo set_value('product_details') ?> </textarea>
+                                    <textarea type="text" name="product_details" class="form-control mb-4" id="summernote" placeholder="Enter Product Details"><?php echo set_value('product_details') ?> </textarea>
+                                    <span class="alert alert-warning"><?php if (isset($validation)) {
+                                                                            $error = $validation->getError('product_details');
+                                                                            echo $error;
+                                                                        } ?> </span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product Price </label>
-                                    <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter Product price" value="<?php echo set_value('product_price') ?>" />
+                                    <input type="text" name="product_price" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Product price" value="<?php echo set_value('product_price') ?>" />
+                                    <span class="alert alert-warning"><?php if (isset($validation)) {
+                                                                            $error = $validation->getError('product_price');
+                                                                            echo $error;
+                                                                        } ?></span>
                                 </div>
 
 

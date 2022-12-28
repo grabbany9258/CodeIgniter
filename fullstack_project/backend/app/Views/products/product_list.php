@@ -1,6 +1,5 @@
-<?php //include('layouts/header.php') 
-?>
 <?php echo view('layouts/product_header.php') ?>
+
 <!-- Navbar -->
 <?php echo view('layouts/top_nav.php') ?>
 <!-- /.navbar -->
@@ -36,8 +35,6 @@
 
             <div class="row">
                 <div class="col-lg-12 text-center bg-">
-                    <!-- /.card -->
-
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">DataTable with default features</h3>
@@ -57,12 +54,14 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <?php
-                                $count = 1;
-                                foreach ($products as $product) : ?>
-                                    <tbody>
+                                <tbody>
+                                    <?php
+                                    $count = 1;
+                                    foreach ($products as $product) : ?>
+
                                         <tr>
                                             <td><?= $count ?></td>
+
                                             <td><?= $product['product_name'] ?></td>
                                             <td><?= $product['product_price'] ?></td>
                                             <td><?= $product['product_details'] ?></td>
@@ -74,19 +73,19 @@
                                         </tr>
 
                                     <?php
-                                    $count++;
-                                endforeach; ?>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>SL</th>
-                                            <th>Product Name</th>
-                                            <th>Price</th>
-                                            <th>Details </th>
-                                            <th><a href="products/new" class="btn btn-success ">Add Product</a> </th>
+                                        $count++;
+                                    endforeach; ?>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>Product Name</th>
+                                        <th>Price</th>
+                                        <th>Details </th>
+                                        <th><a href="products/new" class="btn btn-success ">Add Product</a> </th>
 
-                                        </tr>
-                                    </tfoot>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -101,4 +100,6 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+?>
 <?php echo view('layouts/product_footer.php') ?>
