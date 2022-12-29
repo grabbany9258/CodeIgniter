@@ -47,7 +47,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="post" action="/products/create">
+                        <form method="post" action="/products/create" enctype="multipart/form-data">
                             <div class="card-body">
 
 
@@ -61,6 +61,22 @@
                                         </div>
                                     <?php endif ?>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Product Category </label>
+                                    <select name="category_name" class="form-control">
+                                        <option value="" disabled selected>Select One</option>
+                                        <?php foreach ($cats as $cat) : ?>
+                                            <option value="<?= $cat['id'] ?>"><?= $cat['category_name'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+
+
+
+
+                                </div>
+
+
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Product Details</label>
                                     <textarea type="text" name="product_details" class="form-control mb-4" id="summernote" placeholder="Enter Product Details"><?php echo old('product_details') ?> </textarea>
@@ -81,6 +97,16 @@
                                     <span class="text-danger">
                                         <?php if (isset($errors['product_price'])) {
                                             echo $errors['product_price'];
+                                        } ?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Product Image </label>
+                                    <input type="file" name="product_image" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Product image" value="<?php echo old('product_image') ?>" />
+
+                                    <span class="text-danger">
+                                        <?php if (isset($errors['product_image'])) {
+                                            echo $errors['product_image'];
                                         } ?></span>
                                 </div>
 

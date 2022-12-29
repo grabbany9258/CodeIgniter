@@ -64,8 +64,10 @@
                                     <tr>
                                         <th>SL</th>
                                         <th>Product Name</th>
+                                        <th>Product Category</th>
                                         <th>Price</th>
                                         <th>Details</th>
+                                        <th>Image</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -78,8 +80,10 @@
                                             <td><?= $count ?></td>
 
                                             <td><?= $product['product_name'] ?></td>
+                                            <td><?= $product['product_category'] ?></td>
                                             <td><?= $product['product_price'] ?></td>
                                             <td><?= $product['product_details'] ?></td>
+                                            <td><img src="<?= $product['product_image'] ?>" alt="image" width="50"></td>
                                             <td>
                                                 <!-- <a href="products/edit/<? //php echo $product['id']; 
                                                                             ?>"><i class="fa fa-edit"></i></a> | -->
@@ -97,8 +101,10 @@
                                     <tr>
                                         <th>SL</th>
                                         <th>Product Name</th>
+                                        <th>Product Category</th>
                                         <th>Price</th>
                                         <th>Details </th>
+                                        <th>Image </th>
                                         <th><a href="products/new" class="btn btn-success ">Add Product</a> </th>
 
                                     </tr>

@@ -17,7 +17,7 @@
         <div class="form-group mt-3">
             <label for="inputEmail3" class="">Product Name</label>
             <div class="mt-2 ">
-                <input type="text" class="form-control " name="p_name" placeholder="Enter Name" value="<?= old('p_name') ? old('p_name') : ''; ?>">
+                <input type="text" class="form-control " name="p_name" placeholder="Enter Name" value="<?= old('p_name') ? old('p_name') : $products['p_name']; ?>">
             </div>
         </div>
         <div class="form-group mt-3 ">
@@ -30,31 +30,15 @@
             <label for="inputPassword3">Category</label>
             <select class="form-control mt-2 " name="category" placeholder="Enter Price">
                 <option value="" disabled selected>Select One</option>
-                <option value="Dress" <?= old('category') == 'Dress' ? 'selected' : '' ?>>Dress</option>
-                <!-- <option value="Gadget"  -->
-                <?php
-                //if ($products['category'] == 'Gadget') { echo "selected";} 
-                ?>>
-                <!-- Gadget</option> -->
+                <option value="Dress" <?= old('category') == 'Dress' ? 'selected' : ($products['category'] == 'Dress' ? 'selected' : ''); ?>>Dress</option>
 
-                <option value="Gadget" <?= old('category') == 'Gadget' ? 'selected' : $products['category'] == 'Gadget', 'selected';
+                <option value="Gadget" <?= old('category') == 'Gadget' ? 'selected' : ($products['category'] == 'Gadget' ? 'selected' : ''); ?>>Gadget</option>
 
-                                        ?>>Gadget</option>
-                <option value="Fruits" <?= $products['category'] == 'Fruits' ?
-                                            'selected' : old('category') == old('category');
+                <option value="Fruits" <?= old('category') == 'Fruits' ? 'selected' : ($products['category'] == 'Fruits' ? 'selected' : ''); ?>>Fruits</option>
 
-                                        ?>>Fruits</option>
+                <option value="Vegetables" <?= old('category') == 'Vegetables' ? 'selected' : ($products['category'] == 'Vegetables' ? 'selected' : ''); ?>>Vegetables</option>
 
-                <option value="Vegetables" <?php if ($products['category'] == 'Vegetables') {
-                                                echo "selected";
-                                            } else {
-                                                old('category') == "";
-                                            } ?>>Vegetables</option>
-                <option value="Meat" <?php if ($products['category'] == 'Meat') {
-                                            echo "selected";
-                                        }
-
-                                        ?>>Meat</option>
+                <option value="Meat" <?= old('category') == 'Meat' ? 'selected' : ($products['category'] == 'Meat' ? 'selected' : ''); ?>>Meat</option>
             </select>
         </div>
         <div class="form-group mt-3 ">
