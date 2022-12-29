@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Models\ProductModel;
 use CodeIgniter\RESTful\ResourceController;
 
-
 class Products extends ResourceController
 {
     /**
@@ -13,14 +12,6 @@ class Products extends ResourceController
      *
      * @return mixed
      */
-
-
-    // validationa ar value rakhar jonno ata lagbe
-    // function __construct()
-    // {
-    //     helper(['form', 'url']);
-    // }
-
 
     public function index()
     {
@@ -57,28 +48,25 @@ class Products extends ResourceController
      */
     public function create()
     {
-
         $rules = [
             'product_name' => 'required|min_length[5]|max_length[20]',
             'product_details' => 'required|min_length[10]',
             'product_price' => 'required|numeric',
-
         ];
 
         $errors = [
-
             'product_name' => [
-                'required' => 'Product name must be fill',
+                'required' => 'Product Name must be fill',
                 'min_length' => 'Minimum length 5',
                 'max_length' => 'Maximum lenght is 30',
             ],
             'product_details' => [
-                'required' => 'Product name must be fill',
-                'min_length' => 'Minimum length 5',
+                'required' => 'Product Details must be fill',
+                'min_length' => 'Minimum length 10',
 
             ],
             'product_price' => [
-                'required' => 'Product name must be fill',
+                'required' => 'Product Price must be fill',
                 'numeric' => 'Number Only',
 
             ],
@@ -158,6 +146,6 @@ class Products extends ResourceController
     {
         $model = new ProductModel();
         $model->delete($id);
-        return redirect('Products');
+        return redirect()->to('Products')->with('del_msg', "Deleted Succesfully");
     }
 }

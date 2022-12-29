@@ -1,0 +1,4 @@
+For Adding validation in form:
+
+	1) In controller have to start a session
+	2)

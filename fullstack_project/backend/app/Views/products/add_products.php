@@ -51,26 +51,26 @@
                             <div class="card-body">
 
 
-
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product Name </label>
                                     <input type="text" name="product_name" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?php echo old('product_name') ?>" />
 
-                                    <span class="text-danger">
-                                        <?php if (isset($errors['product_name'])) {
-                                            echo $errors['product_name'];
-                                        } ?></span>
+                                    <?php if (isset($errors['product_name'])) : ?>
+                                        <div class="alert alert-warning my-2">
+                                            <?= $errors['product_name']; ?>
+                                        </div>
+                                    <?php endif ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Product Details</label>
                                     <textarea type="text" name="product_details" class="form-control mb-4" id="summernote" placeholder="Enter Product Details"><?php echo old('product_details') ?> </textarea>
 
 
-                                    <span class="text-danger">
-                                        <?php if (isset($errors['product_details'])) {
-                                            echo $errors['product_details'];
-                                        } ?> </span>
+                                    <?php if (isset($errors['product_details'])) : ?>
+                                        <div class="alert alert-warning">
+                                            <?= $errors['product_details']; ?>
+                                        </div>
+                                    <?php endif ?>
                                 </div>
 
 

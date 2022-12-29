@@ -20,9 +20,14 @@
                     <!-- for showing Alert When Product Updated -->
                     <?php
                     if (session()->has('msg')) : ?>
-                        <div class="alert alert-success"><?= session()->msg; ?></div>
+                        <div class="alert alert-success"> <?= session()->msg; ?></div>
+                    <?php endif; ?>
 
+                    <!-- For delating  -->
 
+                    <?php
+                    if (session()->has('del_msg')) : ?>
+                        <div class="alert alert-danger"><?= session()->del_msg; ?></div>
                     <?php endif; ?>
 
                 </div><!-- /.col -->
