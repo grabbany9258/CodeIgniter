@@ -50,7 +50,7 @@
 
 
                         <!-- <form method="post" action="/products/update/<?= $product['id']; ?>"> -->
-                        <form method="post" action="<?= base_url('products/update/' . $product['id']); ?>">
+                        <form method="post" action="<?= base_url('products/update/' . $product['id']); ?>" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
 
@@ -64,7 +64,6 @@
 
                                     <?php endif; ?>
                                 </div>
-
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Product Details</label>
@@ -86,14 +85,32 @@
                                 </div>
 
 
-                            </div>
-                            <!-- /.card-body -->
 
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">
-                                    Submit
-                                </button>
-                            </div>
+
+                                <div class="form-group">
+
+                                    <label for="exampleInputEmail1">Product image </label>
+
+                                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?= old('product_image') ? old('product_image') : $product['product_image']  ?>" />
+
+                                    <?php if (isset($errors['product_image'])) : ?>
+
+                                        <div class="alert alert-warning mt-2"><?= $errors['product_image']; ?></div>
+
+                                    <?php endif; ?>
+
+                                    <img src="<?= old('product_image') ? old('product_image') : $product['product_image']  ?>">
+                                </div>
+
+
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+
                         </form>
                     </div>
                 </div>

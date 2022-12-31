@@ -44,7 +44,7 @@ class Products extends ResourceController
         return view("products/add_products", $data);
 
 
-        return view('products/add_products');
+        // return view('products/add_products');
     }
 
     /**
@@ -97,16 +97,18 @@ class Products extends ResourceController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         } else {
             $img = $this->request->getFile('product_image');
-            $path = "assets/" . 'uploads/';
+            $path = "/assets/uploads/";
             $img->move($path);
+
+            $namepath  = $path . $img->getName();
+            $data['product_image'] = $namepath;
 
 
             $data['product_name'] =  $this->request->getPost('product_name');
             $data['product_category'] =  $this->request->getPost('category_name');
             $data['product_details'] =  $this->request->getPost('product_details');
             $data['product_price'] =  $this->request->getPost('product_price');
-            $namepath  = $path . $img->getName();
-            $data['product_image'] = $namepath;
+
 
             $model = new ProductModel();
             // $model->save($data);
@@ -145,16 +147,35 @@ class Products extends ResourceController
             'product_details' => 'required|min_length[10]',
             'product_price' => 'required|numeric',
 
+            'product_image' => [
+                //'uploaded[file]',
+                'mime_in[product_image,image/jpg,image/jpeg,image/png]',
+                'max_size[product_image,1024]',
+            ]
+
         ]);
 
         if (!$validate) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         } else {
-            $model = new ProductModel();
+
+            $img = $this->request->getFile('product_image');
+            $path = "/assets/uploads/";
+            $img->move($path);
+
+            $namepath  = $path . $img->getName();
+            $data['product_image'] = $namepath;
+
+
+
+
+
             $data['product_name'] = $this->request->getPost('product_name');
             $data['product_details'] = $this->request->getPost('product_details');
             $data['product_price'] = $this->request->getPost('product_price');
+            $model = new ProductModel();
             $model->update($id, $data);
+
             return redirect()->to('Products')->with('msg', "Updated Succesfully");
         }
 

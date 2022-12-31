@@ -116,15 +116,45 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="products" class="nav-link">
+                            <a href="<?= base_url('products') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Products</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="products/new" class="nav-link">
+                            <a href="<?= base_url('products/new') ?>" class="nav-link">
+                                <!-- <a href="products/new" class="nav-link"> -->
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>New Products</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+
+                <!-- For Category  -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Category
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('category') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All categories</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('category/new') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>New Category</p>
                             </a>
                         </li>
 

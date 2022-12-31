@@ -38,6 +38,7 @@ $routes->setAutoRoute(true);
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Dashboard::index');
 $routes->resource('Products');
+$routes->resource('Category');
 
 /*
  * --------------------------------------------------------------------

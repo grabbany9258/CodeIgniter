@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Database\Seeds\CategorySeeder;
+use App\Models\CategoryModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class Category extends ResourceController
@@ -13,7 +15,9 @@ class Category extends ResourceController
      */
     public function index()
     {
-        //
+        $model = new CategoryModel();
+        $data['categories'] = $model->findAll();
+        return view('category/category_list', $data);
     }
 
     /**
@@ -33,7 +37,8 @@ class Category extends ResourceController
      */
     public function new()
     {
-        //
+        // $model = new CategoryModel();
+        return view('category/add_category');
     }
 
     /**
@@ -43,7 +48,15 @@ class Category extends ResourceController
      */
     public function create()
     {
-        //
+        $data['category_name'] = $this->request->getPost('category_name');
+        $data['category_details'] = $this->request->getPost('category_details');
+        //print_r($data);
+
+        $model = new CategoryModel();
+        if ($model->save($data)) {
+            //return redirect('Products');
+            return redirect()->to('category');
+        }
     }
 
     /**
@@ -73,6 +86,8 @@ class Category extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $model = new CategoryModel();
+        $model->delete($id);
+        return redirect()->to('category')->with('del_msg', "Deleted Succesfully");
     }
 }
