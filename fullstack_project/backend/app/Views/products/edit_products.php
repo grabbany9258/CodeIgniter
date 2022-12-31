@@ -91,7 +91,9 @@
 
                                     <label for="exampleInputEmail1">Product image </label>
 
-                                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?= old('product_image') ? old('product_image') : $product['product_image']  ?>" />
+                                    <input type="file" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" />
+
+                                    <img src="/<?= $product['product_image']; ?>">
 
                                     <?php if (isset($errors['product_image'])) : ?>
 
@@ -99,7 +101,7 @@
 
                                     <?php endif; ?>
 
-                                    <img src="<?= old('product_image') ? old('product_image') : $product['product_image']  ?>">
+
                                 </div>
 
 

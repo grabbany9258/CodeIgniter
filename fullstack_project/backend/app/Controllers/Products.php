@@ -97,17 +97,19 @@ class Products extends ResourceController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         } else {
             $img = $this->request->getFile('product_image');
-            $path = "/assets/uploads/";
+            $path = "assets/uploads/";
             $img->move($path);
 
-            $namepath  = $path . $img->getName();
-            $data['product_image'] = $namepath;
+
 
 
             $data['product_name'] =  $this->request->getPost('product_name');
             $data['product_category'] =  $this->request->getPost('category_name');
             $data['product_details'] =  $this->request->getPost('product_details');
             $data['product_price'] =  $this->request->getPost('product_price');
+
+            $namepath  = $path . $img->getName();
+            $data['product_image'] = $namepath;
 
 
             $model = new ProductModel();
@@ -160,7 +162,7 @@ class Products extends ResourceController
         } else {
 
             $img = $this->request->getFile('product_image');
-            $path = "/assets/uploads/";
+            $path = "assets/uploads/";
             $img->move($path);
 
             $namepath  = $path . $img->getName();

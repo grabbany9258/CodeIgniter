@@ -130,6 +130,7 @@
                         </li>
 
 
+
                     </ul>
                 </li>
 
@@ -160,6 +161,7 @@
 
 
                     </ul>
+                    <a href="<?php site_url('/users/logout') ?>">Logout</a>
                 </li>
 
 

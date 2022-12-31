@@ -10,6 +10,12 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/products/new" class="nav-link">Add Product</a>
         </li>
+
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="<?php echo site_url('/users/logout') ?>" class="nav-link">Logout</a>
+        </li>
+
+
     </ul>
 
     <!-- Right navbar links -->
