@@ -49,7 +49,6 @@
 
 
 
-                        <!-- <form method="post" action="/products/update/<?= $product['id']; ?>"> -->
                         <form method="post" action="<?= base_url('products/update/' . $product['id']); ?>" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
@@ -91,7 +90,7 @@
 
                                     <label for="exampleInputEmail1">Product image </label>
 
-                                    <input type="file" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" />
+                                    <input type="file" name="product_image" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" />
 
                                     <img src="/<?= $product['product_image']; ?>">
 

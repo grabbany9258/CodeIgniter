@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CategoryModel;
 use App\Models\ProductModel;
+use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
 
 class Products extends ResourceController
@@ -14,12 +15,17 @@ class Products extends ResourceController
      * @return mixed
      */
 
+    use ResponseTrait;
+
     public function index()
     {
         $model = new ProductModel();
         $data['products'] = $model->findAll();
         // print_r($data);
         return view('products/product_list', $data);
+
+        // this part for making json 
+        //return $this->respond($data);
     }
 
     /**
