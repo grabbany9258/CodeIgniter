@@ -83,10 +83,11 @@ class Products extends ResourceController
 
             ],
             'product_image' => [
-                'mime_in' => 'Only jpg,jpeg,png are allowed',
-                'max_size' => 'Not More than 1MB',
+                //'uploaded' => 'Upload a Valid File',
+                'mime_in' => 'Only jpg, png and jpeg are allowed',
+                'max_size' => 'File size should be within 1MB',
 
-            ],
+            ]
 
 
         ];
@@ -154,7 +155,6 @@ class Products extends ResourceController
                 'mime_in[product_image,image/jpg,image/jpeg,image/png]',
                 'max_size[product_image,1024]',
             ]
-
         ]);
 
         if (!$validate) {
