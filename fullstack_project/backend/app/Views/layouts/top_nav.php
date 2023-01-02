@@ -1,4 +1,14 @@
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+    <?php
+    // $sess = session();
+    // //echo "<pre>";
+    // print_r($sess->get());
+
+    session()->get('name');
+    ?>
+
+
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -12,7 +22,7 @@
         </li>
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?php echo site_url('/users/logout') ?>" class="nav-link">Logout</a>
+            <a href="<?php echo site_url('/users/logout') ?>" class="nav-link">Logout &nbsp:&nbsp; <b><?= session()->get('name'); ?></b></a>
         </li>
 
 

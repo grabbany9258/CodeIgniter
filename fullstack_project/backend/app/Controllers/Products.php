@@ -125,7 +125,7 @@ class Products extends ResourceController
             //print_r($data);
             if ($model->save($data)) {
                 //return redirect('Products');
-                return redirect()->to('Products');
+                return redirect()->to('products');
             }
         }
     }
@@ -184,7 +184,7 @@ class Products extends ResourceController
             $model = new ProductModel();
             $model->update($id, $data);
 
-            return redirect()->to('Products')->with('msg', "Updated Succesfully");
+            return redirect()->to('products')->with('msg', "Updated Succesfully");
         }
 
         // Avbebeo kora jay
@@ -205,6 +205,6 @@ class Products extends ResourceController
     {
         $model = new ProductModel();
         $model->delete($id);
-        return redirect()->to('Products')->with('del_msg', "Deleted Succesfully");
+        return redirect()->to('products')->with('del_msg', "Deleted Succesfully");
     }
 }

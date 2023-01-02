@@ -88,7 +88,7 @@
                                                 <!-- <a href="products/edit/<? //php echo $product['id']; 
                                                                             ?>"><i class="fa fa-edit"></i></a> | -->
                                                 <a href="<?php echo site_url('products/edit/' . $product['id']) ?>"><i class="fa fa-edit"></i></a> |
-                                                <a href="products/delete/<?php echo $product['id']; ?>"><i class="fa fa-trash"></i></a>
+                                                <a href="products/delete/<?php echo $product['id']; ?>" class="delete"><i class="fa fa-trash"></i></a>
                                             </td>
 
                                         </tr>
@@ -126,3 +126,17 @@
 
 ?>
 <?php echo view('layouts/product_footer.php') ?>
+
+<!-- For delete script -->
+
+<script>
+    $(function() {
+        $(".delete").click(function(e) {
+            e.preventDefault();
+            $.post(this.href, function() {
+                alert('Successfully Deleted');
+                location.reload();
+            });
+        });
+    });
+</script>
