@@ -40,6 +40,7 @@ $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'authGuard']);
 $routes->get('/', 'Dashboard::index', ['filter' => 'authGuard']);
 $routes->presenter('products', ['filter' => 'authGuard']);
 $routes->presenter('category', ['filter' => 'authGuard']);
+$routes->presenter('customers', ['filter' => 'authGuard']);
 
 
 // These are all for user auth validation
@@ -50,7 +51,8 @@ $routes->post('/users/login', 'SigninController::auth');
 $routes->get('/users/logout', 'SigninController::logout');
 
 // For frontend view
-$routes->get('/frontend/products', 'Frontend::ProductsList');
+// $routes->get('/frontend/products', 'Frontend::ProductsList');
+$routes->get('/frontend/customer', 'FrontendCat::CustomerList');
 
 
 /*

@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo base_url(); ?>" class="brand-link">
-        <img src="/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Admin Pannel</span>
+        <img src="/assets/dist/img/AdminLTELogo.png" alt="TCLD's Canteen" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">TCLD's Canteen</span>
     </a>
 
     <!-- Sidebar -->
@@ -156,6 +156,36 @@
                             <a href="<?= base_url('category/new') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>New Category</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
+
+                <!-- For Customers list -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                            Customers
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('customers') ?>" class="nav-link">
+                                <i class="far fa-paper-plane nav-icon"></i>
+                                <p>All Customers</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('customers/new') ?>" class="nav-link">
+                                <i class="far fa-paper-plane nav-icon"></i>
+                                <p>New Customers</p>
                             </a>
                         </li>
 

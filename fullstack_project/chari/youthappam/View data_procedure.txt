@@ -1,0 +1,22 @@
+For view data from data base:
+	1)create a file like category use rfc 	for demo function
+	2) Link it in route in App.js
+	3)import axios
+	4)import useState , useEffect
+	5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question : useState ar por ([]) kokhn ata use korbo r kokhn korbo na ?

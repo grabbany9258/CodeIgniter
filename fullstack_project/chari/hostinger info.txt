@@ -1,0 +1,15 @@
+Db Name : u318076185_grbreact
+Db Username: u318076185_grbreact
+Db Password: |3MZM>*mYs3
+
+https://grbreact.bdprogrammers.com/
+
+  "homepage": "https://grbreact.bdprogrammers.com/",
+
+
+1) order.js 18
+2) Member.js 16
+3)Navbar 122
+4) php_action-> db_connection.php
+5) Api->db_connection.php 8
+6) pacage.json = "homepage": "https://grbreact.bdprogrammers.com/",
