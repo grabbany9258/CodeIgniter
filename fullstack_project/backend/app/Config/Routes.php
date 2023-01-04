@@ -42,6 +42,8 @@ $routes->presenter('products', ['filter' => 'authGuard']);
 $routes->presenter('category', ['filter' => 'authGuard']);
 $routes->presenter('customers', ['filter' => 'authGuard']);
 
+$routes->get('/qb', 'Qb::index');
+
 
 // These are all for user auth validation
 $routes->get('/users/signup', 'SignupController::index');
