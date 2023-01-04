@@ -94,9 +94,9 @@
                                             <td><?= $customer['floor_nb'] ?></td>
 
                                             <td>
-                                                <a href="products/view/<?php echo $customer['id']; ?>"><i class="fa fa-eye"></i></a>|
+                                                <a href="customers/view/<?php echo $customer['id']; ?>"><i class="fa fa-eye"></i></a>|
 
-                                                <a href="<?php echo site_url('customer/edit/' . $customer['id']) ?>"><i class="fa fa-edit"></i></a> |
+                                                <a href="<?php echo site_url('customers/edit/' . $customer['id']) ?>"><i class="fa fa-edit"></i></a> |
 
                                                 <a href="customers/delete/<?php echo $customer['id']; ?>" class="delete"><i class="fa fa-trash"></i></a>
                                             </td>

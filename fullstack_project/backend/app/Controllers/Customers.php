@@ -69,7 +69,12 @@ class Customers extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $model = new CustomerModel();
+        $data['customer'] = $model->find($id);
+        //print_r($data);
+        $model = new DepartmentModel();
+        $data['deps'] = $model->findAll();
+        return view('customer/edit_customer', $data);
     }
 
     /**

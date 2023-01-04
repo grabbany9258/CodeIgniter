@@ -64,6 +64,19 @@
                                     <?php endif; ?>
                                 </div>
 
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Product Category </label>
+                                    <select name="category_name" class="form-control">
+                                        <option value="" disabled selected>Select One</option>
+                                        <?php foreach ($cats as $cat) : ?>
+                                            <option value="<?= $cat['id'] ?>"><?= $cat['category_name'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </div>
+
+
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Product Details</label>
 
@@ -92,7 +105,7 @@
 
                                     <input type="file" name="product_image" class="form-control" id="exampleInputEmail1" placeholder="Enter Product Name" />
 
-                                    <img src="/<?= $product['product_image']; ?>">
+                                    <img src="/<?= $product['product_image']; ?>" width=70px>
 
                                     <?php if (isset($errors['product_image'])) : ?>
 
