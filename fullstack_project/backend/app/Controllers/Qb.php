@@ -106,12 +106,101 @@ class Qb extends BaseController
 
         ########### For Accesing Data #########
 
-        $db = \Config\Database::connect();
-        $builder = $db->table('products');
+        // $db = \Config\Database::connect();
+        // // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('products');
+        // echo "<pre>";
+        // $raw = $builder->get();
+        // $data['products'] = $raw->getResult();
+        // print_r($data);
+        // //return view('test', $data);
+
+
+        ######### With another database #########
+        ####### employess table#######
+        ####### 1 ######
+
+        // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('employees');
+        // $builder->select('firstName,lastName,email')->get();
+        // $builder->where("jobTitle = 'Sales Rep'");
+        // $data = $builder->get()->getResult();
+        // echo "<pre>";
+        // print_r($data);
+
+        ######## 2 ##########
+
+        // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('employees');
+        // $builder->select('firstName,lastName,email, jobTitle');
+        // $builder->where("jobTitle ='Sales Rep' and reportsTo = 1143");
+        // // $builder->where("jobTitle ='Sales Rep' and reportsTo = 1143");
+        // $data = $builder->get()->getResult();
+        // echo "<pre>";
+        // print_r($data);
+
+        #### 3 ########
+        // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('employees, offices');
+        // $builder->select('firstName,lastName,email, city, country');
+        // $builder->where('employees.officeCode = offices.officeCode and offices.country = "USA"');
+        // $data = $builder->get()->getResult();
+        // echo "<pre>";
+        // print_r($data);
+
+        ##### 4 #####
+
+        // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('orders, customers');
+        // $builder->select('customerName,phone,city, orderNumber,orderDate,status');
+        // $builder->where('orders.customerNumber = customers.customerNumber');
+        // $data = $builder->get()->getResult();
+        // echo "<pre>";
+        // print_r($data);
+
+        ##### 4 WITH JOIN #######
+
+        // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('orders');
+        // $builder->select('customerName,phone,city, orderNumber,orderDate,status');
+        // $data = $builder->join('customers', 'orders.customerNumber = customers.customerNumber');
+        // $data = $builder->get()->getResult();
+        // echo "<pre>";
+        // print_r($data);
+
+        ##### 5 ####
+
+        // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('orders,orderdetails,customers');
+        // $builder->select('customerName,phone,city,orders.orderNumber,orderDate,status,quantityOrdered,priceEach');
+        // $builder->where('orders.customerNumber = customers.customerNumber AND orders.orderNumber =orderdetails.orderNumber ');
+        // $data = $builder->get()->getResult();
+        // echo "<pre>";
+        // print_r($data);
+
+        ######## 5 with join ##### 
+
+        // $db = \Config\Database::connect('quiry_builder');
+        // $builder = $db->table('customers');
+        // $builder->select('customerName,phone,city,orders.orderNumber,orderDate,status,quantityOrdered,priceEach');
+        // $builder->join('orders', 'orders.customerNumber = customers.customerNumber');
+        // $builder->join('orderdetails', 'orders.orderNumber =orderdetails.orderNumber');
+        // $data = $builder->get()->getResult();
+        // echo "<pre>";
+        // print_r($data);
+
+        #######6 ########
+
+        $db = \Config\Database::connect('quiry_builder');
+        $builder = $db->table('orders, orderdetails, customers, products');
+        $builder->select('customerName, city, orders.orderNumber, orderDate, products.productCode, productName, quantityOrdered, priceEach, MSRP')->selectSum('quantityOrdered')->selectSum('priceEach')->groupBy('orders.orderNumber');
+
+        $builder->where('orders.orderNumber = orderdetails.orderNumber AND
+        products.productCode = orderdetails.productCode AND
+        orders.customerNumber =  customers.customerNumber');
+
+        $data = $builder->get()->getResult();
         echo "<pre>";
-        $raw = $builder->get();
-        $data['products'] = $raw->getResult();
         print_r($data);
-        return view('test', $data);
     }
 }
