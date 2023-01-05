@@ -55,6 +55,9 @@ $routes->get('/users/logout', 'SigninController::logout');
 // For frontend view
 // $routes->get('/frontend/products', 'Frontend::ProductsList');
 $routes->get('/frontend/customer', 'FrontendCat::CustomerList');
+$routes->get('/test', 'TestController::index');
+$routes->get('/about', 'TestController::about');
+$routes->get('/test/list', 'TestController::productList');
 
 
 /*

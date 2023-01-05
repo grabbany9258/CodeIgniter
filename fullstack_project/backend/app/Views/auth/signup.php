@@ -31,7 +31,7 @@
                             <?php endif; ?>
 
                             <form action="<?php echo base_url('/users/store'); ?>" method="post">
-
+                                <?= csrf_field() ?>
                                 <div class="form-outline mb-2">
                                     <input type="text" name="name" placeholder="Name" value="<?= set_value('name') ?>" class="form-control form-control-lg" />
                                     <label class="form-label" for="form3Example1cg">Your Name</label>

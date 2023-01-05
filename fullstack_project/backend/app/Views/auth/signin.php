@@ -26,7 +26,7 @@
                         <h3 class="mb-5">Sign in</h3>
 
                         <form action="<?php echo base_url('/users/login'); ?>" method="post">
-
+                            <?= csrf_field() ?>
                             <div class="form-outline mb-2">
                                 <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" class="form-control form-control-lg" />
                                 <label class="form-label" for="typeEmailX-2">Email</label>

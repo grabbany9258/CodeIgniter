@@ -48,6 +48,7 @@
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form method="post" action="/products/create" enctype="multipart/form-data">
+                            <?= csrf_field() ?>
                             <div class="card-body">
 
 

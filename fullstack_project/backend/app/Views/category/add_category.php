@@ -48,7 +48,9 @@
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form method="post" action="<?= base_url('category/create') ?>">
+                            <?= csrf_field() ?>
                             <div class="card-body">
+
 
 
                                 <div class="form-group">
