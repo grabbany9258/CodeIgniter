@@ -53,7 +53,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Customer Name </label>
-                                    <input type="text" name="name" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Customer Name" value="<?php echo old('name') ? old('nmae') : $customer['name'] ?>" />
+                                    <input type="text" name="name" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Customer Name" value="<?php echo old('name') ? old('name') : $customer['name'] ?>" />
 
                                     <?php if (isset($errors['name'])) : ?>
                                         <div class="alert alert-warning my-2">
@@ -67,7 +67,7 @@
                                     <select name="department" class="form-control">
                                         <option value="" disabled selected>Select One</option>
 
-                                        <option value="<?= old('department') ? old('department') : $customer['department']; ?>"></option>
+                                        <option value="<?= $dep('dep_name') ? 'selected' : $data['dep_name']; ?>"></option>
 
                                     </select>
                                 </div>
