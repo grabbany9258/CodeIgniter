@@ -1,0 +1,1 @@
+Multi User Auth :  https://onlinewebtutorblog.com/codeigniter-4-multi-auth-user-role-wise-login/

@@ -26,8 +26,30 @@
                     <!-- For delating  -->
 
                     <?php
-                    if (session()->has('del_msg')) : ?>
+                    if (session()->has('del_msg')) :
+                    ?>
                         <div class="alert alert-danger"><?= session()->del_msg; ?></div>
+                    <?php
+                    endif;
+                    ?>
+
+                    <!-- for alert  -->
+
+                    <?php if (session()->has('msg')) : ?>
+                        <script>
+                            function tempAlert(msg, duration) {
+                                var el = document.createElement("div");
+                                el.setAttribute('class', 'alert alert-success text-white');
+                                el.setAttribute("style", "position:absolute;top:20%;left:50%;");
+                                el.innerHTML = msg;
+                                setTimeout(function() {
+                                    el.parentNode.removeChild(el);
+                                }, duration);
+                                document.body.appendChild(el);
+                            }
+
+                            tempAlert('<?= session()->msg; ?>', 5000);
+                        </script>
                     <?php endif; ?>
 
                 </div><!-- /.col -->
@@ -84,11 +106,26 @@
                                             <td><?= $product['product_price'] ?></td>
                                             <td><?= $product['product_details'] ?></td>
                                             <td><img src="<?= $product['product_image'] ?>" alt="image" width="50"></td>
-                                            <td>
+                                            <td class="d-flex justify-content-center align-items-center">
+
+                                                <!-- For edit -->
                                                 <!-- <a href="products/edit/<? //php echo $product['id']; 
                                                                             ?>"><i class="fa fa-edit"></i></a> | -->
-                                                <a href="<?php echo site_url('products/edit/' . $product['id']) ?>"><i class="fa fa-edit"></i></a> |
-                                                <a href="products/delete/<?php echo $product['id']; ?>" class="delete"><i class="fa fa-trash"></i></a>
+
+                                                <!-- For edit -->
+
+                                                <a href="<?php echo site_url('products/edit/' . $product['id']) ?>"><i class="fa fa-edit"></i></a>
+
+                                                <span class="mx-2">|</span>
+
+
+                                                <!-- For delete  -->
+
+                                                <form method="post" action="<?= ("products/delete/" . $product['id']) ?>">
+                                                    <?= csrf_field() ?>
+                                                    <button class="btn p-0" onclick="('Are you sure about Delete ?')" type="submit"><i class="fa fa-trash text-danger"></i> </button>
+                                                </form>
+
                                             </td>
 
                                         </tr>
@@ -130,13 +167,13 @@
 <!-- For delete script -->
 
 <script>
-    $(function() {
-        $(".delete").click(function(e) {
-            e.preventDefault();
-            $.post(this.href, function() {
-                alert('Successfully Deleted');
-                location.reload();
-            });
-        });
-    });
+    // $(function() {
+    //     $(".delete").click(function(e) {
+    //         e.preventDefault();
+    //         $.post(this.href, function() {
+    //             alert('Successfully Deleted');
+    //             location.reload();
+    //         });
+    //     });
+    // });
 </script>

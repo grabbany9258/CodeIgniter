@@ -125,7 +125,7 @@ class Products extends ResourceController
             //print_r($data);
             if ($model->save($data)) {
                 //return redirect('Products');
-                return redirect()->to('products');
+                return redirect()->to('products')->with('msg', "Succesfully added");
             }
         }
     }
@@ -139,6 +139,9 @@ class Products extends ResourceController
     {
         $model = new ProductModel();
         $data['product'] = $model->find($id);
+
+        $model = new CategoryModel();
+        $data['cats'] = $model->orderBy('category_name', 'ASC')->findAll();
         //print_r($data);
         return view('products/edit_products', $data);
     }
@@ -205,6 +208,6 @@ class Products extends ResourceController
     {
         $model = new ProductModel();
         $model->delete($id);
-        return redirect()->to('products')->with('del_msg', "Deleted Succesfully");
+        return redirect()->to('products')->with('msg', "Deleted Succesfully");
     }
 }

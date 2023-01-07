@@ -31,17 +31,11 @@
         <?php endforeach; ?>
 
     </table>
-    <div class="containber">
-        <div class="pagination justify-content-center">
-            <?php if ($pager) : ?>
-                <?php $pagi_path = 'index.php/test/list'; ?>
-                <?php $pager->setPath($pagi_path); ?>
-                <?= $pager->links(); ?>
 
-            <?php endif; ?>
-        </div>
+    <!-- pagination -->
 
-    </div>
+    <?php echo $pager->links('group1', 'bs_full'); ?>
+
 
     <?php
     // echo "<pre>";
