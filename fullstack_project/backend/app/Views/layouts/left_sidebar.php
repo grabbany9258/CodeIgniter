@@ -192,6 +192,43 @@
 
                     </ul>
 
+
+                </li>
+
+                <!-- For Reports -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                            Reports
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('reports/report2') ?>" class="nav-link">
+                                <i class="far fa-paper-plane nav-icon"></i>
+                                <p>Report 1</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('reports/report2') ?>" class="nav-link">
+                                <i class="far fa-paper-plane nav-icon"></i>
+                                <p>Report 2</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('reports/stafflist') ?>" class="nav-link">
+                                <i class="far fa-paper-plane nav-icon"></i>
+                                <p>Office wise staff list</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
                 </li>
 
 

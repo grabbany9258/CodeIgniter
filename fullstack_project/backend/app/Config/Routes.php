@@ -36,8 +36,11 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
-$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'authGuard']);
 $routes->get('/', 'Dashboard::index', ['filter' => 'authGuard']);
+$routes->get('/reports/stafflist', 'ReportController::stafflist', ['filter' => 'authGuard']);
+$routes->get('/reports/allstaff', 'ReportController::allstaff', ['filter' => 'authGuard']);
+$routes->get('/reports/orderlist', 'ReportController::orderlist', ['filter' => 'authGuard']);
+$routes->get('/reports/orderquery', 'ReportController::orderQuery', ['filter' => 'authGuard']);
 $routes->presenter('products', ['filter' => 'authGuard']);
 $routes->presenter('category', ['filter' => 'authGuard']);
 $routes->presenter('customers', ['filter' => 'authGuard']);
