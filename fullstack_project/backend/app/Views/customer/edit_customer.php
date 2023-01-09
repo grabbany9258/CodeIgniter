@@ -47,7 +47,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" action="/customers/update" enctype="multipart/form-data">
+            <form method="post" action="<?= base_url('customers/update/' . $customer['id']); ?>" enctype="multipart/form-data">
               <?= csrf_field() ?>
               <div class="card-body">
                 <div class="form-group">

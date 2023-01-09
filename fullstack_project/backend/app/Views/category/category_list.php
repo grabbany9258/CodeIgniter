@@ -55,7 +55,7 @@
                             <h3 class="card-title">DataTable with default features</h3>
                         </div>
                         <div>
-                            <a href="category/new" class="btn btn-primary float-right mr-4 mt-3">Add Product</a>
+                            <a href="category/new" class="btn btn-primary float-right mr-4 mt-3">Add Category</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -79,10 +79,21 @@
                                             <td><?= $cat['category_name'] ?></td>
                                             <td><?= $cat['category_details'] ?></td>
 
-                                            <td>
-                                                <a href="<?php echo site_url('category/edit/' . $cat['id']) ?>"><i class="fa fa-edit"></i></a> |
+                                            <td class="d-flex justify-content-center 
+                                            align-items-center">
+                                                <a href="<?php echo site_url('category/edit/' . $cat['id']) ?>"><i class="fa fa-edit"></i></a>
 
-                                                <a href="category/delete/<?php echo $cat['id']; ?>"><i class="fa fa-trash"></i></a>
+                                                <span class="mx-1">|</span>
+
+                                                <!-- For delete its work with form -->
+
+                                                <form method="post" action="<?= ('category/delete/' . $cat['id']) ?>">
+                                                    <?= csrf_field() ?>
+
+                                                    <button class="btn p-0" type="submit" onclick="('Are you sure about delete?')"><i class="fa fa-trash text-danger"></i></button>
+
+
+                                                </form>
                                             </td>
 
                                         </tr>

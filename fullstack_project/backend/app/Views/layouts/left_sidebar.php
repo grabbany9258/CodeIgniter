@@ -225,6 +225,13 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="<?= base_url('reports/orderlist') ?>" class="nav-link">
+                                <i class="far fa-paper-plane nav-icon"></i>
+                                <p>Month wise Order list</p>
+                            </a>
+                        </li>
+
 
                     </ul>
 

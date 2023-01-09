@@ -37,6 +37,7 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Dashboard::index', ['filter' => 'authGuard']);
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'authGuard']);
 $routes->get('/reports/stafflist', 'ReportController::stafflist', ['filter' => 'authGuard']);
 $routes->get('/reports/allstaff', 'ReportController::allstaff', ['filter' => 'authGuard']);
 $routes->get('/reports/orderlist', 'ReportController::orderlist', ['filter' => 'authGuard']);

@@ -84,7 +84,13 @@ class Customers extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $data['name'] = $this->request->getPost('name');
+        $data['dep_category'] = $this->request->getPost('dep_category');
+        $data['mob_no'] = $this->request->getPost('mob_no');
+        $data['floor_nb'] = $this->request->getPost('floor_nb');
+        $model = new CustomerModel();
+        $model->update($id, $data);
+        return redirect('customers');
     }
 
     /**

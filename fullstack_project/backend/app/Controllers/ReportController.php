@@ -45,8 +45,8 @@ class ReportController extends BaseController
         // $builder->where('orders. customerNumber=customers.customerNumber');
         //$data['orders'] = $builder->get()->getResultArray();
         $data['orders'] = $builder->getResultArray();
-        dd($data);
+        //dd($data);
 
-        // return view('reports/orderslist_form');
+        return view('reports/orderslist', $data);
     }
 }

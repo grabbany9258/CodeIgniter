@@ -93,12 +93,28 @@
                                             <td><?= $customer['mob_no'] ?></td>
                                             <td><?= $customer['floor_nb'] ?></td>
 
-                                            <td>
-                                                <a href="customers/view/<?php echo $customer['id']; ?>"><i class="fa fa-eye"></i></a>|
+                                            <td class="d-flex justify-content-center align-items-center">
+                                                <a href="customers/view/<?php echo $customer['id']; ?>"><i class="fa fa-eye"></i></a>
+                                                <span class="mx-1">|</span>
 
-                                                <a href="<?php echo site_url('customers/edit/' . $customer['id']) ?>"><i class="fa fa-edit"></i></a> |
+                                                <a href="<?php echo site_url('customers/edit/' . $customer['id']) ?>"><i class="fa fa-edit"></i></a>
 
-                                                <a href="customers/delete/<?php echo $customer['id']; ?>" class="delete"><i class="fa fa-trash"></i></a>
+                                                <span class="mx-1">|</span>
+
+
+
+                                                <!-- For ddelete Customer -->
+                                                <form method="post" action="<?= ('customers/delete/' . $customer['id']) ?>">
+                                                    <?= csrf_field() ?>
+                                                    <button class="btn p-0" type="submit" onclick="('Are you sure about delete ?')"> <i class="fa fa-trash text-primary"></i>
+
+                                                    </button>
+
+
+
+
+                                                </form>
+
                                             </td>
 
                                         </tr>
@@ -139,7 +155,7 @@
 
 <!-- For delete script -->
 
-<script>
+<!-- <script>
     $(function() {
         $(".delete").click(function(e) {
             e.preventDefault();
@@ -149,4 +165,4 @@
             });
         });
     });
-</script>
+</script> -->

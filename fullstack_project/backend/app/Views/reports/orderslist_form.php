@@ -81,15 +81,18 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+
+                            <!-- For Creating Report -->
+
+
                             <h1>Order List</h1>
                             <form action="">
 
                                 <input type="date" id="startdate"><br>
                                 <input type="date" id="enddate"><br>
                                 <button type="button" id="reportbtn">Show Report</button>
-
-
                             </form>
+                            
                             <div id="show">
 
                             </div>
