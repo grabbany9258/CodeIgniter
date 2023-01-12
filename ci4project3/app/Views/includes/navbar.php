@@ -9,23 +9,23 @@
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link <?= ($page == 'index.php') ? 'active' : ""; ?> " href="/">Home</a>
+                <a class="nav-link <?= ($page == 'index.php') ? 'active' : ""; ?> " href="<?= base_url() ?>">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= ($page == 'about') ? 'active' : ""; ?> " href="/about">About Us</a>
+                <a class="nav-link <?= ($page == 'about') ? 'active' : ""; ?> " href="<?= base_url() ?>/about">About Us</a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= ($page == 'contact') ? 'active' : ""; ?> " href="/contact">Contact us</a>
+                <a class="nav-link <?= ($page == 'contact') ? 'active' : ""; ?> " href="<?= base_url() ?>/contact">Contact us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= ($page == 'student') ? 'active' : ""; ?> " href="/student">Students List</a>
+                <a class="nav-link <?= ($page == 'student') ? 'active' : ""; ?> " href="<?= base_url() ?>/student">Students List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= ($page == 'product') ? 'active' : ""; ?> " href="/product">Products List</a>
+                <a class="nav-link <?= ($page == 'product') ? 'active' : ""; ?> " href="<?= base_url() ?>/product">Products List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= ($page == 'users') ? 'active' : ""; ?> " href="/users">Users Crud</a>
+                <a class="nav-link <?= ($page == 'users') ? 'active' : ""; ?> " href="<?= base_url() ?>/users">Users Crud</a>
             </li>
         </ul>
     </div>

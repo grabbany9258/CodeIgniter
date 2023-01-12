@@ -1,0 +1,2 @@
+you load AdminLTE's "demo.js",
+this file is only creating for testing purpose!

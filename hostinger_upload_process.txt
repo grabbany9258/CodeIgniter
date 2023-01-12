@@ -1,0 +1,6 @@
+1) move all from public folder to backend
+2)index.php "require FCPATH . '../app/Config/Paths.php';" -> require FCPATH . './app/Config/Paths.php';
+3) App.php te base url change korte hbe ..
+4) and menu gula te base url dite hbe..
+5) and utahnor somoy site a tkhna abar base_url change korte hbe...
+6) database tulte hbe
