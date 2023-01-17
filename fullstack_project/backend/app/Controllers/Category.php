@@ -48,8 +48,7 @@ class Category extends ResourceController
      */
     public function create()
     {
-        $data['category_name'] = $this->request->getPost('category_name');
-        $data['category_details'] = $this->request->getPost('category_details');
+
         //print_r($data);
 
         $model = new CategoryModel();
@@ -66,6 +65,8 @@ class Category extends ResourceController
      */
     public function edit($id = null)
     {
+        $data['category_name'] = $this->request->getPost('category_name');
+        $data['category_details'] = $this->request->getPost('category_details');
         $model = new CategoryModel();
         $data['cat'] =  $model->find($id);
         return view('category/edit_category', $data);

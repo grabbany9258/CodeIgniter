@@ -17,25 +17,28 @@
                     <h1 class="m-0">Dashboard</h1>
 
 
-                    <!-- for showing Alert When Product Updated -->
+                    <!-- for showing message When Product Added -->
                     <?php
-                    if (session()->has('msg')) : ?>
-                        <div class="alert alert-success"> <?= session()->msg; ?></div>
-                    <?php endif; ?>
-
-                    <!-- For delating  -->
-
-                    <?php
-                    if (session()->has('del_msg')) :
+                    //if (session()->has('msg')) : 
                     ?>
-                        <div class="alert alert-danger"><?= session()->del_msg; ?></div>
+                    <!-- <div class="alert alert-success"> <?= session()->msg; ?></div> -->
+                    <?php //endif; 
+                    ?>
+
+                    <!-- For delating message  -->
+
                     <?php
-                    endif;
+                    //if (session()->has('msg')) :
+                    ?>
+                    <!-- <div class="alert alert-danger"><?= session()->msg; ?></div> -->
+                    <?php
+                    // endif;
                     ?>
 
                     <!-- for alert  -->
 
-                    <?php if (session()->has('msg')) : ?>
+                    <?php if (session()->has('msg')) :
+                    ?>
                         <script>
                             function tempAlert(msg, duration) {
                                 var el = document.createElement("div");
@@ -48,9 +51,10 @@
                                 document.body.appendChild(el);
                             }
 
-                            tempAlert('<?= session()->msg; ?>', 5000);
+                            tempAlert('<?= session()->msg; ?>', 3000);
                         </script>
-                    <?php endif; ?>
+                    <?php endif;
+                    ?>
 
                 </div><!-- /.col -->
                 <div class="col-sm-6">

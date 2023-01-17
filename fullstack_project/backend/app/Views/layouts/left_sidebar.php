@@ -32,10 +32,24 @@
         </div>
 
         <!-- Sidebar Menu -->
+
+
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+                <!-- For Dashboard -->
+
+                <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-align-justify"></i>
+                        <p>
+                            Dashboard
+
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="pages/widgets.html" class="nav-link">
@@ -117,14 +131,14 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="<?= base_url('products') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle-plus nav-icon"></i>
                                 <p>All Products</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= base_url('products/new') ?>" class="nav-link">
                                 <!-- <a href="products/new" class="nav-link"> -->
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle-plus nav-icon"></i>
                                 <p>New Products</p>
                             </a>
                         </li>
@@ -134,28 +148,86 @@
                     </ul>
                 </li>
 
+                <!-- For Food -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-utensils"></i>
+                        <p>
+                            Food
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('food') ?>" class="nav-link">
+                                <i class="far fa-circle-plus nav-icon"></i>
+                                <p>All Food</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('food/new') ?>" class="nav-link">
+                                <i class="far fa-circle-plus nav-icon"></i>
+                                <p>Add Food</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
 
                 <!-- For Category  -->
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-list"></i>
                         <p>
-                            Category
+                            Food Category
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="<?= base_url('category') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle-plus nav-icon"></i>
                                 <p>All categories</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= base_url('category/new') ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>New Category</p>
+                                <i class="far fa-circle-plus nav-icon"></i>
+                                <p>Add Category</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
+                <!-- For Orders -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-file-alt"></i>
+                        <p>
+                            Orders
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('orders') ?>" class="nav-link">
+                                <i class="far fa-circle-plus nav-icon"></i>
+                                <p>All Orders</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('orders/new') ?>" class="nav-link">
+                                <i class="far fa-circle-plus nav-icon"></i>
+                                <p>Create Orders</p>
                             </a>
                         </li>
 
@@ -169,23 +241,27 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-address-card"></i>
+
+                        <i class="nav-icon fa fa-user"></i>
                         <p>
                             Customers
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+
                         <li class="nav-item">
                             <a href="<?= base_url('customers') ?>" class="nav-link">
-                                <i class="far fa-paper-plane nav-icon"></i>
+                                <i class="far fa-paper-plus nav-icon"></i>
                                 <p>All Customers</p>
                             </a>
                         </li>
+
+
                         <li class="nav-item">
                             <a href="<?= base_url('customers/new') ?>" class="nav-link">
-                                <i class="far fa-paper-plane nav-icon"></i>
-                                <p>New Customers</p>
+                                <i class="far fa-paper-plus nav-icon"></i>
+                                <p>Add Customers</p>
                             </a>
                         </li>
 

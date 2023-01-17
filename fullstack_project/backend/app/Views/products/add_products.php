@@ -54,7 +54,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Product Name </label>
-                                    <input type="text" name="product_name" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?php echo old('product_name') ?>" />
+                                    <input type="text" name="product_name" class="form-control mb-4" id="exampleInputEmail1" placeholder="Enter Product Name" value="<?php echo old('product_name') ?>" /> 
 
                                     <?php if (isset($errors['product_name'])) : ?>
                                         <div class="alert alert-warning my-2">

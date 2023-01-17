@@ -45,6 +45,7 @@ $routes->get('/reports/orderquery', 'ReportController::orderQuery', ['filter' =>
 $routes->presenter('products', ['filter' => 'authGuard']);
 $routes->presenter('category', ['filter' => 'authGuard']);
 $routes->presenter('customers', ['filter' => 'authGuard']);
+$routes->presenter('food', ['filter' => 'authGuard']);
 
 $routes->get('/qb', 'Qb::index');
 

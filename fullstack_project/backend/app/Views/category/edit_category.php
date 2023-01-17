@@ -47,7 +47,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="post" action="<?= base_url('category/update' . $categories['id']) ?>">
+                        <form method="post" action="<?= base_url('category/update' . $cat['id']) ?>">
                             <?= csrf_field() ?>
                             <div class="card-body">
 
