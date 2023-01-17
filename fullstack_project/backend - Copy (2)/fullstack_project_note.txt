@@ -1,0 +1,16 @@
+1) Admin download
+2) fullstack_project
+3)composer create-project codeigniter4/appstarter backend
+4)create database name as fullstack_project
+5) connect database in .env file & changes environment into development
+6) dashboard controller bante hbe, 
+7)routes change kora hoyece
+8)default controller banato hoyece dashboaarad k
+9) dist, plugins folder copied from adminLTe to public/assets folder
+10)copied all codes from index.html to admin_home.php and updated path
+11) kata kating for dashborad.php
+12) php spark make:migration Products
+	i) php spark migrate
+	ii) php spark migrate:refresh (vul hole)
+13)php spark make:model ProductModel  % allowed fields
+14) php spark make:controller Products --restful (Making controller for products)

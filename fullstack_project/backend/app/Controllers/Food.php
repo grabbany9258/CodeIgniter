@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\CategoryModel;
+use App\Models\FoodModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class Food extends ResourceController
@@ -13,7 +15,13 @@ class Food extends ResourceController
      */
     public function index()
     {
-        //
+        $model = new FoodModel();
+        $data['food'] = $model->findAll();
+
+        $model = new CategoryModel();
+        $data['categories'] = $model->findAll();
+
+        return view('food/food_list', $data);
     }
 
     /**
@@ -33,7 +41,9 @@ class Food extends ResourceController
      */
     public function new()
     {
-        //
+        $model = new CategoryModel();
+        $data['cats'] = $model->orderBy('categories_name', 'ASC')->findAll();
+        return view("food/add_food", $data);
     }
 
     /**
@@ -43,7 +53,23 @@ class Food extends ResourceController
      */
     public function create()
     {
-        //
+        $data['product_name'] =  $this->request->getPost('product_name');
+        $data['quantity'] =  $this->request->getPost('quantity');
+        $data['rate'] =  $this->request->getPost('rate');
+        $data['categories_id'] =  $this->request->getPost('category_name');
+        $data['status'] =  $this->request->getPost('productStatus');
+
+
+
+
+        $model = new FoodModel();
+
+
+
+        if ($model->save($data)) {
+
+            return redirect()->to('food')->with('msg', "Succesfully added");
+        }
     }
 
     /**
@@ -73,6 +99,8 @@ class Food extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $model = new FoodModel();
+        $model->delete($id);
+        return redirect()->to('food')->with('msg', "Deleted Succesfully");
     }
 }
