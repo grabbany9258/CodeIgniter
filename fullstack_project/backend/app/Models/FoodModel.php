@@ -14,7 +14,7 @@ class FoodModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['product_name', 'rate', 'categories_id', 'quantity'];
+    protected $allowedFields    = ['product_name', 'rate', 'categories_id', 'quantity', 'status'];
 
     // Dates
     protected $useTimestamps = false;

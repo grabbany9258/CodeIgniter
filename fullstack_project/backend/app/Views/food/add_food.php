@@ -13,12 +13,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-md-6">
-          <h1 class="">Add Product Form</h1>
+          <h1 class="">Add Food </h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/Food">All Products</a></li>
-            <li class="breadcrumb-item active">Add Product Form</li>
+            <li class="breadcrumb-item active">Add Food</li>
           </ol>
         </div>
       </div>
@@ -43,7 +43,7 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title text-center">Add Product</h3>
+              <h3 class="card-title text-center">Add Food</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -97,7 +97,8 @@
 
                 <div class="form-group">
                   <label for=""> Status </label>
-                  <select class="form-control mb-4" id="productStatus" name="productStatus" value="<?php echo old('categories_status') ?>">
+                  <select class="form-control mb-4" id="productStatus" name="status" value="<?php echo old('categories_status') ?>">
+
                     <option value="">~~SELECT~~</option>
                     <option value="1">Available</option>
                     <option value="2">Not Available</option>
@@ -119,7 +120,7 @@
                 <button type="submit" class="btn btn-primary">
                   Submit
                 </button>
-                <a href="/Products" class="btn btn-success">View Products</a>
+                <a href="/food" class="btn btn-success">View Foods</a>
               </div>
             </form>
           </div>

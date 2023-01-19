@@ -1,5 +1,0 @@
-1) For sending demo data (create a SEED)
-	php spark make:seeder 
-2) Seed a change kore then command
-	php spark db:seed ProductsSeeder
-3)

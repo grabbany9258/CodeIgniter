@@ -1,7 +1,0 @@
-Authentication:
-	1)php spark make:migration Users
-	2)php spark migrate
-	3)Php spark make:model UsersModel
-	$ fillup the allowed fields
-
-https://www.positronx.io/codeigniter-authentication-login-and-registration-tutorial/

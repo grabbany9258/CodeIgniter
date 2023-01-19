@@ -57,7 +57,7 @@ class Food extends ResourceController
         $data['quantity'] =  $this->request->getPost('quantity');
         $data['rate'] =  $this->request->getPost('rate');
         $data['categories_id'] =  $this->request->getPost('category_name');
-        $data['status'] =  $this->request->getPost('productStatus');
+        $data['status'] =  $this->request->getPost('status');
 
 
 
